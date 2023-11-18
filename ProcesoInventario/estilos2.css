@@ -6,6 +6,18 @@
 
 
 }
+.contenido{
+    width: 80%;
+    margin: auto;
+}
+.firmas{
+    width: 80%;
+    margin: auto;
+}
+.contenido h2{
+    width: 80%;
+    margin-left: 50px;
+}
 .validacionDescargar h1, h2, h3{
     text-align: start;
     margin: 0;
