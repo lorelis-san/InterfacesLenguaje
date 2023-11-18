@@ -1,0 +1,87 @@
+*{  margin: auto;
+    padding: 0;
+    width: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.acta-container {
+    max-width: 80%;
+    margin: 20px auto;
+}
+h1,h2,h3,h4,h5{
+    overflow: hidden; 
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.btnDescargar button{
+    width: 15%;
+    margin: 15px 0;
+    padding: 6px;
+    margin-right: 1%;
+    background-color: rgb(0, 0, 0);
+    color: antiquewhite;
+    border: none;
+    border-radius: 5px;
+}
+
+.btnDescargar button:hover{
+    background-color: rgb(66, 37, 231)
+}
+.btnDescargar{
+    display: flex;
+    justify-content: end;
+    margin-right: 10%;
+}
+#validarBtn{
+    padding: 5px;
+    background-color: darkcyan;
+    color: azure;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    
+}
+#validarBtn:hover{
+    background-color: rgb(228, 228, 228);
+    color: black;
+    font-weight: bolder;
+    border-width: 1px;
+    border-style: groove;
+    border-color: darkcyan;
+
+
+}
+
+.firma{
+    width: 20%; 
+    margin-left: 30px; 
+    margin-bottom: 10px; 
+    margin-top: 10px;
+    border: 2px; 
+    border-top: 0; 
+    border-left: 0; 
+    border-right: 0; 
+    border-style: solid;
+}
+

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>BAJA1</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="estilos2.css">
+</head>
+<body>
+  
+  <form class="row g-3" style="width: 80%; margin: auto;">
+    <h1>Registro Baja de Bienes</h1>
+    <div class="col-md-6">
+        <label for="inputState" class="form-label">ID Informe de Sustento de Diferencias</label>
+        <select id="inputState" class="form-select">
+          <option selected>Choose...</option>
+          <option>...</option>
+        </select>
+    </div>
+    <div class="col-md-6">
+      <label for="inputState" class="form-label">ID Jefe de la Unidad de Logística</label>
+      <select id="inputState" class="form-select">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="col-6">
+      <label for="inputAddress" class="form-label">Fecha Baja</label>
+      <input type="date" class="form-control" id="inputAddress">
+    </div>
+    
+    <div class="col-6" style="margin-top: 48px;" >
+      <button type="submit" class="btn btn-primary mb-3">Registrar</button>
+    </div>
+   
+    </form>
+
+    <br>
+    <div class="container">	 	
+      <h2>Lista de Bienes</h2>
+      
+      <br>
+      
+      Buscar Item<input class="form-control">
+      <br>
+      <table class="table table-hover">
+          <thead>
+          <tr>
+                  <th>Código Artículo</th>
+                  <th>Descripción Artículo</th>
+                  <th>Existencias Mes Anterior</th>
+                  <th>Entradas</th>
+                  <th>Salidas</th>
+                  <th>Stock</th>
+                  <th>Diferencias Faltantes</th>
+                  <th>Diferencias Sobrantes</th>
+                  <th style="width: 25%;">Motivo</th>
+              
+          </tr>
+          </thead>
+          <tbody>
+          
+              <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td >
+                          <div class="col-md-6" style="width: 90%;">
+                              
+                              <select id="inputState" class="form-select">
+                                <option selected>Mermas</option>
+                                <option>Merma volátil</option>
+                                <option>Animales depredadores</option>
+                                <option>Negligencia/falta de control</option>
+                                <option>Robo/Sustracción</option>
+                              </select>
+                          </div>
+                      </td>
+                      
+                  </tr>
+          
+  
+              
+          </tbody>
+      </table>
+    
+      <input type="text" class="firma">
+      <h6 >Jefe de la Unidad de Logística</h6>
+      <button class="guardar" onclick="habilitarBotones()">Guardar</button>
+      <br>
+
+      <button type="submit" id="verActaBtn" name="opcion" value="reg" class="btn btn-primary" disabled>&nbsp;&nbsp;&nbsp;<a href="ProyectoBajaBienes.html">Ver Resolución de Baja de Bienes</a>&nbsp; &nbsp;&nbsp;</button>
+      
+    </div>
+
+    <script>
+      function habilitarBotones() {
+          // Habilitar los botones después de hacer clic en "Guardar"
+          document.getElementById('verActaBtn').disabled = false;
+          document.getElementById('btnSalir').disabled = false;
+      }
+  </script>
+
+
+
+
+
+</body>
+</html>

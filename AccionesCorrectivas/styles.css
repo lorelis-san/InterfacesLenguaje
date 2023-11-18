@@ -1,0 +1,12 @@
+.contenedor{
+    width: 80%;
+    margin: auto;
+    margin-top: 40px;
+}
+a{
+    color: aliceblue;
+    text-decoration: none;
+}
+td a{
+    color: blue;
+}

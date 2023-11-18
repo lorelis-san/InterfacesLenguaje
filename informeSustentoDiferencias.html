@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="estilos2.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="informe">
+            <br>
+            <h1> Informe de Sustento de Diferencias de Almacén
+            </h1>
+            <h5>Fecha:</h5>
+            <h5>Responsable:</h5>
+            <h5>Destino:</h5>
+            <br>
+            <h5>Detalle de Diferencias:</h5>
+            <div class="tablaInforme">
+                
+            <table class="table table-hover" id="tablaActa">
+                <thead>
+                <tr>
+                        <th>Código Artículo</th>
+                        <th>Descripción Artículo</th>
+                        <th>Existencias Mes Anterior</th>
+                        <th>Entradas</th>
+                        <th>Salidas</th>
+                        <th>Stock</th>
+                        <th>Diferencias Faltantes</th>
+                        <th>Diferencias Sobrantes</th>
+                        <th>Porcentaje</th>
+                    
+                </tr>
+                </thead>
+                <tbody>
+                
+                    <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            
+                        </tr>
+                
+        
+                    
+                </tbody>
+           </table>
+            </div>
+           <h5>
+                Causas de Diferencias:
+           </h5>
+           <p>La diferencia se debió a ______________________________________________________________________________
+            __________________________________________________________________________</p>
+            <h5>Acciones Correctivas Tomadas:
+            </h5>
+    
+            <p><b>1. Revisión y Actualización de Registros: </b> - Se llevó a cabo una revisión exhaustiva de los registros de inventario para identificar y corregir cualquier error 
+                en la entrada de datos y registros.
+            </p>
+    
+    
+            <p><b>2. Recuento Físico Adicional:</b> Se realizó un recuento físico adicional de los artículos afectados para asegurar una reconciliación más precisa entre el inventario teórico y el físico.
+            </p>
+            <p><b>3. Entrenamiento del Personal:</b>  - Se proporcionó capacitación adicional al personal involucrado en la gestión de inventarios para mejorar la precisión en la identificación y registro de 
+                movimientos de bienes.
+            </p>
+            <p><b>4. Implementación de Procedimientos de Verificación:</b>
+            - Se introdujeron procedimientos adicionales de verificación para asegurar que las transacciones de entrada y salida sean adecuadamente registradas y verificadas 
+                por personal autorizado.
+            </p>
+            <h5>Recomendaciones para Mejoras:</h5>
+            <p><b>1. Revisión de Procedimientos de Entrada y Salida: </b>
+                - Se recomienda una revisión completa de los procedimientos de entrada y salida de bienes para identificar posibles puntos de error y mejorar la precisión en el 
+             registro.</p>
+            <p><b>2. Implementación de Códigos de Barras o Tecnología de Identificación Automática:
+                </b>- Se sugiere la implementación de tecnologías de identificación automática, como códigos de barras, para agilizar y automatizar los procesos de seguimiento 
+             de inventario, reduciendo la probabilidad de errores manuales.</p>
+            <p><b>3. Establecimiento de Auditorías Periódicas:
+             </b> - Se propone la realización de auditorías periódicas del inventario para mantener un control constante y detectar discrepancias de manera temprana.</p>
+            <p><b>4. Mejora en la Comunicación entre Departamentos:
+               </b> - Se recomienda mejorar la comunicación entre los diferentes departamentos involucrados en los procesos logísticos para asegurar una transmisión precisa de 
+             la información relacionada con movimientos de inventario.</p>
+            <p>Estas acciones correctivas y recomendaciones para mejoras están diseñadas para abordar las diferencias de almacén identificadas y fortalecer los controles internos, 
+                con el objetivo de prevenir futuras discrepancias y mejorar la eficiencia general en la gestión de inventarios.</p>
+    
+            <br>
+            <input type="text" class="firma">
+            <p></p>
+            <h6 style="margin-left: 145px;">Analista Designado de Finanzas</h6>
+            
+            <br>
+            <button class="validar">Validar Firma</button>
+    
+        </div>
+
+        <br>
+       
+        <div class="enviarInforme">
+            <button class="validar" >Enviar Informe</button>
+            <h6>*Plazo Máximo: 3 días</h6>
+        </div>
+        <div class="contador">
+             <p>Quedan: </p>
+             <p id="contador"></p>
+         </div>
+        <br>
+       
+        <div class="btnDescargar">
+            <button id="btnConvertir" >Descargar PDF</button>
+            <button ><a href="listado.html">Cancelar</a></button>
+        </div>
+
+        <script>
+                function formatearTiempo(segundos) {
+        const horas = Math.floor(segundos / 3600);
+        const minutos = Math.floor((segundos % 3600) / 60);
+        const segundosRestantes = segundos % 60;
+        return `${String(horas).padStart(2, '0')}:${String(minutos).padStart(2, '0')}:${String(segundosRestantes).padStart(2, '0')}`;
+    }
+
+    // Función principal del contador
+    function iniciarContador() {
+        let tiempoRestante = 72 * 60 * 60; // 24 horas en segundos
+
+        // Actualizar el contador cada segundo
+        const intervalo = setInterval(function() {
+            document.getElementById('contador').innerHTML = formatearTiempo(tiempoRestante);
+
+            if (tiempoRestante === 0) {
+                clearInterval(intervalo); // Detener el contador cuando llega a cero
+            } else {
+                tiempoRestante--;
+            }
+        }, 1000);
+    }
+    
+    // Iniciar el contador cuando se carga la página
+    window.onload = function() {
+        iniciarContador();
+    };
+        </script>
+
+    </body>
+</html>

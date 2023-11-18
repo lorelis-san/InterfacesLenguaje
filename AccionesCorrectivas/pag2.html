@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" >
+    <title>BAJA1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="contenedor">
+      
+      <form class="row g-3" >
+        <h1>Registro de Solicitud de Acción Correctiva (SAC)</h1>
+        <div class="col-6">
+          <label for="idHallazgo" class="form-label">ID Hallazgo:</label>
+          <input type="text" class="form-control" id="idHallazgo">
+        </div>
+        <div class="col-6">
+          <label for="idSAC" class="form-label">Fecha:</label>
+          <input type="date" class="form-control" id="idSAC">
+        </div>
+        <div class="col-md-6">
+          <label for="responsableOSI" class="form-label">Responsable OSI:</label>
+          <select id="responsableOSI" class="form-select">
+            <option selected>Seleccionar...</option>
+            <option>...</option>
+          </select>
+        </div>
+        
+        <div class="col-6">
+          <label for="idAnalista" class="form-label">ID Analista:</label>
+          <select id="idAnalista" class="form-select">
+            <option selected>Seleccionar...</option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+          </select>
+        </div>
+        <div class="col-6" style="margin-top: 18px;">
+          <button type="button" name="opcion" value="reg" class="btn btn-primary" onclick="habilitarBoton()">&nbsp;&nbsp;&nbsp;Registrar&nbsp;&nbsp;&nbsp;</button>
+        </div>
+      </form>
+      <button type="button" id="boton" class="btn btn-primary" onclick="irAPagina()" disabled>&nbsp;&nbsp;&nbsp;Enviar a Analista Designado&nbsp;&nbsp;&nbsp;</button>
+    </div>
+
+    <script>
+      // Desactivar el botón al cargar la página
+      document.getElementById('boton').disabled = true;
+
+      function habilitarBoton() {
+        console.log('Se presionó');
+        // Habilitar los botones después de hacer clic en "Registrar"
+        document.getElementById('boton').disabled = false;
+        console.log('se activó');
+      }
+      function irAPagina() {
+        // Redirigir a la otra página HTML
+        window.location.href = 'pag3.html';
+      }
+    </script>
+</html>

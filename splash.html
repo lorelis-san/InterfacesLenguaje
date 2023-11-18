@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suspensión de recepción de bienes</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="textoInicial">
+      <h5>Sistema Integral de Administración - SIA Logística</h5>
+      <br>
+
+      <h1>LISTADO DE BIENES DE ALMACÉN</h1>
+      <br>
+      <h2>Hola, usuario</h2>
+      <h3>Para continuar, por favor confirme el siguiente campo:</h3>
+    </div>
+
+
+      <div class="btnSuspension">
+        <br>
+        <p>¿La recepción de bienes ha sido suspendida?</p>
+        <input type="button" value="Confirmar" id="validarBtn">
+      </div>
+      <div class="form-group">                                    
+        <label for="txtPlanAuditoria" >ID Planificación Auditoría:</label>
+        <select class="form-control" id="txtPlanAuditoria"  name="txtPlanAuditoria">
+            <option value="0">Selecciona un registro</option>
+            <%
+                
+                ArrayList<Formulario> formularios = obtenerFormulariosDesdeBaseDeDatos();
+        
+                for (Formulario formulario : formularios) {
+            %>
+                <option value="<%= formulario.getId() %>"><%= formulario.getNombre() %></option>
+            <%
+                }
+            %>
+            </select>
+    </div>
+<!--
+      <div class="form-group">
+        <label for="cboAlmacen">Almacén</label>
+        <select class="form-control" id="cboAlmacen" name="cboAlmacen">
+            <option value="1">AU001</option>
+            <option value="2">AU002</option>
+            <option value="3">AU003</option>
+            <option value="4">AU004</option>
+            <option value="5">AU005</option>
+            <option value="6">AU006</option>
+            <option value="7">AU007</option>
+            <option value="8">AU008</option>
+            <option value="9">AU009</option>
+            <option value="10">AU010</option>
+        
+        </select>
+        
+      </div> -->
+    <table class="table table-hover" id="tablaBien">
+      <thead>
+         <tr>
+             <th>Código Artículo</th>
+             <th>Descripción Artículo</th>
+             <th>Existencias Mes Anterior</th>
+             <th>Entradas</th>
+             <th>Salidas</th>
+             <th>Stock</th>
+            
+         </tr>
+      </thead>
+       <tbody>
+           <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+         </tr>
+
+         </tbody>
+     </table>
+
+    <div class="btnDescargar">
+      <input type="button" value="Descargar Lista Bienes de Almacén" class="descargarBienes"  disabled>
+    </div>
+    <div class="copia">
+      <input type="checkbox" name="enviarCopia" id="enviarCopia" class="enviarCopia" disabled>
+      <label for="enviarCopia">Enviar Copia a Analista Designado de Finanzas</label>
+    </div>
+    <div class="loader" id="loader">
+      <!-- Agrega aquí el contenido del "loader" (por ejemplo, un icono de carga) -->
+      Descargando...
+    </div>
+    
+    <script>
+      const validarBtn = document.getElementById("validarBtn");
+      const checkbox = document.getElementById("enviarCopia");
+      const descargarBienes = document.querySelector(".descargarBienes");
+      const loader = document.getElementById("loader"); 
+
+
+      validarBtn.addEventListener("click", function() {
+        var respuesta = confirm("¿La recepción de bienes ha sido suspendida?");
+
+        if (respuesta) {
+          // Si se hace clic en "Sí", habilitar el checkbox y la descarga
+          checkbox.removeAttribute("disabled");
+          
+        } else {
+          alert("Por favor SUSPENDER la recepción de bienes");
+        }
+      });
+      const botonDescarga = document.getElementsByClassName("descargarBienes");
+      checkbox.addEventListener("change", function() {
+        if (checkbox.checked) {
+          // Si se marca el checkbox, habilitar la descarga
+          for (let i = 0; i < botonDescarga.length; i++) {
+            botonDescarga[i].removeAttribute("disabled");
+            botonDescarga[i].style.backgroundColor = "darkolivegreen";
+            botonDescarga[i].style.cursor = "pointer";
+          }
+        } else {
+          // Si se desmarca el checkbox, deshabilitar la descarga
+          for (let i = 0; i < botonDescarga.length; i++) {
+            botonDescarga[i].setAttribute("disabled", "disabled");
+            botonDescarga[i].style.backgroundColor = ""; // Restaurar el color predeterminado
+            botonDescarga[i].style.cursor = "none";
+          }
+        }
+        });
+        descargarBienes.addEventListener("click", function() {
+          loader.style.display = "block"; // Muestra el "loader"
+
+      // Simula una carga con un retraso (puedes reemplazar esto con tu lógica de descarga real)
+          setTimeout(function() {
+            // Después de un tiempo, oculta el "loader" (puedes reemplazar esto con la lógica de carga real)
+            loader.style.display = "none"; // Oculta el "loader"
+          }, 5000);
+
+          setTimeout(function() {
+          
+            window.location.href = 'index.html';
+          }, 5000);
+         
+          console.log('pasando a otro html')
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Inventario SMV</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../PLANIFICACIÓN DE AUDITORÍAS/registro.html">Planificación de Auditorías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> Proceso de Auditoría</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Baja de Bienes </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../ENTREGA DE MERMAS/Ingreso.html">Entrega de Mermas </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-10 offset-md-3">
+                <form id="frmIngresoMerma" action="" method="">
+                    <h2 class="mb-4">Registro de Entrega de Mermas</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <br>
+                            <div class="form-group">
+                                <label for="cboNroBaka">Nro de Baja de Bienes:</label>
+                                <select class="form-control" id="cboNroBaka" name="cboNroBaka">
+                                    <option value="1">B001</option>
+                                    <option value="2">B002</option>
+                                    <option value="3">B003</option>
+                                    <option value="4">B004</option>
+                                    <option value="5">B005</option>
+                                </select>
+                            </div>
+
+                            <br>
+
+                            <div class="form-group">
+                                <label for="txtNombreTécnico">ID Técnico Administrativo de Almacén:</label>
+                                <input type="text" class="form-control" id="txtNombreTécnico" name="txtIDTecnico">
+                            </div>
+                            <br>
+
+                            <br>
+                            <div class="form-group">
+                                <label for="cboDestinatario">Destinatario:</label>
+                                <select class="form-control" id="cboDestinatario" name="cboDestinatario">
+                                    <option value="1">ONG Solidaridad Internacional</option>
+                                    <option value="2">Fundación Esperanza</option>
+                                    <option value="3">Asociación por los Derechos Humanos</option>
+                                    <option value="4">Ayuda Humanitaria Global </option>
+                                    <option value="5">Médicos Sin Fronteras </option>
+                                </select>
+                            </div>
+
+                            <br>
+                            <div class="form-group">
+                                <label for="txtFecha">Fecha:</label>
+                                <input type="text" class="form-control" id="txtFecha" name="txtFecha">
+                            </div>
+
+                            <br>
+                            <div class="container text-center">
+                                <div class="row align-items-start">
+                                    <div class="col">
+                                        <div class="form-floating">
+                                            <p>Técnico Administrativo de Almacén</p>
+                                            <input type="text" class="form-control" id="txtFecha" name="txtFecha">
+
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-floating">
+                                            <p>Veedor del Órgano de Control Institucional </p>
+                                            <input type="text" class="form-control" id="txtFecha" name="txtFecha">
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <br>
+
+                            <!-- Botón para guardar entrega -->
+                            <button id="btnGuardarEntrega" class="btn btn-primary">Guardar entrega</button>
+                           
+                            <button type="submit" name="opcion"  class="btn btn-primary" disabled><a href="actaEntrega.html" style="color: aliceblue; text-decoration: none;">Acta de Entrega</a></button>
+                            <a class="btn btn-secondary" href="splash.html"> Cancelar </a>
+
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+    // Función para establecer la fecha actual al cargar la página
+    window.onload = function () {
+        // Crear un objeto de fecha para la fecha actual
+        var fechaActual = new Date();
+
+        // Obtener componentes de la fecha
+        var dia = fechaActual.getDate();
+        var mes = fechaActual.getMonth() + 1; // Los meses comienzan desde 0
+        var año = fechaActual.getFullYear();
+
+        // Formatear la fecha en el formato deseado (puedes ajustar el formato según tus necesidades)
+        var fechaFormateada = año + '-' + (mes < 10 ? '0' + mes : mes) + '-' + (dia < 10 ? '0' + dia : dia);
+
+        // Asignar la fecha al campo de entrada
+        document.getElementById("txtFecha").value = fechaFormateada;
+
+        document.getElementById("btnGuardarEntrega").addEventListener("click", function () {
+        // Tu lógica para activar el botón "Acta de Entrega"
+        document.getElementById("btnActaEntrega").disabled = false;
+    });
+    };
+
+    
+
+</script>

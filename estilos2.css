@@ -1,0 +1,179 @@
+
+.validacionDescargar{
+    display: flex;
+    width: 80%;
+    margin: auto;
+
+
+}
+.validacionDescargar h1, h2, h3{
+    text-align: start;
+    margin: 0;
+}
+.validacionDescargar .primeraColumna{
+    width: 40%;
+    padding: 20px;
+    padding-left: 0;
+}
+.validacionDescargar .segundaColumna{
+    width: 60%;
+    padding: 20px;
+    padding-right: 0;
+}
+.segundaColumna p{
+    margin: 0;
+    margin-bottom: 10px;
+}
+.loader{
+    display: none;
+    text-align: center;
+    margin: 10px;
+}
+.listado{
+    display: none;
+}
+.descargarBienes{
+    padding: 10px;
+   
+    background-color: rgb(111, 124, 89);
+    color: beige;
+    border: none;
+    border-radius: 4px;
+}
+#validarBtn{
+    width: 30%;
+    padding: 5px;
+    background-color: darkcyan;
+    color: azure;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    
+}
+#validarBtn:hover{
+    background-color: yellowgreen;
+    color: black;
+    font-weight: bolder;
+    border-width: 1px;
+    border-style: groove;
+    border-color: darkcyan;
+}
+
+.btnDescargar a{
+    text-decoration: none;
+    color: aliceblue;
+}
+.guardar {
+    width: 15%;
+    margin: 10px;
+    margin-left: 0;
+    background-color: slategrey;
+    color: antiquewhite;
+    border: none;
+    border-radius: 5px;
+
+}
+button a{
+    text-decoration: none;
+    color: aliceblue;
+}
+.guardar:hover{
+    background-color: cornflowerblue;
+    font-weight: 500;
+    transition: 0.2s;
+}
+.contador{
+    display: flex;
+    width: 10%;
+    justify-content: flex-start;
+    margin: 0;
+    margin-left: 10%;
+    
+}
+.enviarInforme h6{
+    margin-left: 10%;
+}
+.firma{
+    width: 20%;
+    margin-bottom: 10px; 
+    margin-top: 10px;
+    border: 2px; 
+    border-top: 0; 
+    border-left: 0; 
+    border-right: 0; 
+    border-style: solid;
+}
+p{
+    text-align: justify;
+    width: 80%;
+    margin: auto;
+}
+.container{
+    margin: auto;
+    padding: 0;
+}
+h5{
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+h1{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.tablaMemorandum, .tablaInforme, .tablaActa{
+    width: 80%;
+    margin: auto;
+}
+h6{
+    margin-bottom: 10px;
+
+}
+
+.validar{
+    width: 15%;
+    margin: 15px;
+    margin-left: 10%;
+    background-color: slategrey;
+    color: antiquewhite;
+    border: none;
+    border-radius: 5px;
+
+}
+.validar:hover{
+    background-color: cornflowerblue;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.btnDescargar button{
+    width: 15%;
+    margin: 15px 0;
+    padding: 6px;
+    margin-right: 1%;
+    background-color: darkslategrey;
+    color: antiquewhite;
+    border: none;
+    border-radius: 5px;
+}
+
+.btnDescargar button:hover{
+    background-color: rgb(231, 118, 37);
+}
+.btnDescargar{
+    display: flex;
+    justify-content: end;
+    margin-right: 10%;
+}
+.proyectoBaja{
+    width: 80%;
+    margin: auto;
+
+}
+
+
+
+
+

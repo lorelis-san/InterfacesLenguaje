@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto de Resolución de Baja de Bienes</title>
+    <link rel="stylesheet" href="estilos2.css">
+</head>
+<body>
+    <div class="proyectoBaja">
+        <h1>PROYECTO DE RESOLUCIÓN DE BAJA DE BIENES N° __</h1>
+        <br>
+        <h4>Fecha:</h4>
+        <h4>Hora</h4>
+        <h4>Responsable</h4>
+        <br>
+
+        <input type="text" class="firma">
+        <p></p>
+        <h6 >Jefe de la Unidad de Logística</h6>
+        
+
+        
+        <input type="checkbox" name="" id="chkEntidad"> Destinado a una Entidad Sin Fines de Lucro
+    </div>
+    <script>
+        const check= document.getElementById('chkEntidad');
+        check.addEventListener("change", function() {
+        if (check.checked) {
+            window.location.href = 'RegEntregaMerma.html';
+        }
+    });
+    </script>
+</body>
+</html>

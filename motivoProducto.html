@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-10 offset-md-3"> 
+      <form id="frmBajaBServlet" action="RproductosServlet" method="post">
+     
+        <h1 class="mb-4">REGISTRAR BAJA PRODUCTOS </h1>
+       
+        <div class="row">
+          <div class="col-md-6">           
+           
+
+
+                               <br>
+                                <div class="form-group">
+                                <label for="nomProducto">ID Producto / Bien:</label>
+                                <input type="text" class="form-control" id="nomProducto" name="nomProducto">
+                                </div>
+                                <br>
+				                <div class="form-group">
+				                    <label for="nomProducto">Nombre del Producto / Bien:</label>
+				                    <input type="text" class="form-control" id="nomProducto" name="nomProducto">
+				                </div>
+				                 <br>
+				                 
+                               
+				                 
+                               <br>
+				                <div class="form-group">
+				                    <label for="motivo">Motivo </label>
+				                    <select class="form-control" id="motivo"  name="motivo">
+                                        <option value="0">Selecciona un registro</option>
+                                        <%
+                                            
+                                            ArrayList<Formulario> formularios = obtenerFormulariosDesdeBaseDeDatos();
+                                    
+                                            for (Formulario formulario : formularios) {
+                                        %>
+                                            <option value="<%= formulario.getId() %>"><%= formulario.getNombre() %></option>
+                                        <%
+                                            }
+                                        %>
+                                        </select>
+				                </div>
+				                 <br>
+				                
+				                 
+				                  <div class="form-group">
+              <button type="submit" name="opcion" value="reg" class="btn btn-primary">Guardar</button>
+              <a href="listaBaja.html">atrás</a>
+            </div>
+		</div>		
+		</div>	
+		</form>
+		</div>	
+		</div>	
+		</div>	
+		
+		                 
+</body>
+</html>
