@@ -38,7 +38,10 @@ h1{
     font-weight: 500;
     transition: 0.2s;
 }
-
+.memorandum{
+    width: 80%;
+    margin: auto;
+}
 .btnDescargar button{
     width: 15%;
     margin: 15px 0;
