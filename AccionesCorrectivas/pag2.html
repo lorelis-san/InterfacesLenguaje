@@ -7,6 +7,35 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#">Inventario SMV</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link " href="#">Planificación de
+                          Auditorías</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active" href="/procesoAuditoriaServlet?opcion=lis"> Proceso de Auditoría</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Baja de Bienes </a>
+                  </li>
+
+                  <li class="nav-item">
+                      <a class="nav-link" href="../ENTREGA DE MERMAS/Ingreso.html">Entrega de Mermas </a>
+                  </li>
+              </ul>
+
+          </div>
+      </div>
+  </nav>
     <div class="contenedor">
       
       <form class="row g-3" >
@@ -39,10 +68,61 @@
           </select>
         </div>
         <div class="col-6" style="margin-top: 18px;">
-          <button type="button" name="opcion" value="reg" class="btn btn-primary" onclick="habilitarBoton()">&nbsp;&nbsp;&nbsp;Registrar&nbsp;&nbsp;&nbsp;</button>
+          <button type="button" name="opcion" value="reg" class="btn btn-primary" onclick="habilitarBoton()">&nbsp;&nbsp;&nbsp;Guardar&nbsp;&nbsp;&nbsp;</button>
         </div>
       </form>
-      <button type="button" id="boton" class="btn btn-primary" onclick="irAPagina()" disabled>&nbsp;&nbsp;&nbsp;Enviar a Analista Designado&nbsp;&nbsp;&nbsp;</button>
+      <br><br>
+      
+      <form class="row g-3" >
+        <h1>Actividades para la solución del Hallazgo</h1>
+        <div class="col-6">
+          <label for="idHallazgo" class="form-label">Descripción del Hallazgo:</label>
+          <input type="text" class="form-control" id="idHallazgo">
+        </div>
+        <div class="col-6">
+          <label for="idHallazgo" class="form-label">Causa Raíz:</label>
+          <input type="text" class="form-control" id="idHallazgo">
+        </div>
+        
+       
+      </form>
+      <div class="tablaActividades">
+        <table class="table table-hover" >
+          <thead>
+          <tr>
+                  <th >ID Actividad</th>
+                  <th>Descripción</th>
+                  <th>Fecha de Inicio</th>
+                  <th>Fecha de Término</th>
+                  <th>Estado</th>
+                  <th>Agregar</th>
+
+                
+              
+          </tr>
+          </thead>
+          <tbody>
+          
+              <tr>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true">Pendiente</td>
+                      <td contenteditable="true">+</td>
+                     
+                  </tr>
+          
+  
+              
+          </tbody>
+     </table>
+
+      </div>
+
+      <br> <div class="col-6" style="margin-top: 18px;">
+        <button type="button" name="opcion" value="reg" class="btn btn-primary" onclick="habilitarBoton()">&nbsp;&nbsp;&nbsp;Registrar&nbsp;&nbsp;&nbsp;</button>
+      </div>
     </div>
 
     <script>

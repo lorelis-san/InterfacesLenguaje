@@ -66,6 +66,16 @@
                             </div>
                             <br>
 
+                            <div class="form-group">
+                                <label for="cboVeedor">ID Veedor OCI:</label>
+                                <select class="form-control" id="cboVeedor" name="cboVeedor">
+                                    <option value="1">V001</option>
+                                    <option value="2">V002</option>
+                                    <option value="3">V003</option>
+                                    <option value="4">V004</option>
+                                    <option value="5">V005</option>
+                                </select>
+                            </div>
                             <br>
                             <div class="form-group">
                                 <label for="cboDestinatario">Destinatario:</label>
@@ -90,14 +100,14 @@
                                     <div class="col">
                                         <div class="form-floating">
                                             <p>Técnico Administrativo de Almacén</p>
-                                            <input type="text" class="form-control" id="txtFecha" name="txtFecha">
+                                            <input type="text" class="form-control" id="idTecnico" name="txtFecha">
 
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-floating">
                                             <p>Veedor del Órgano de Control Institucional </p>
-                                            <input type="text" class="form-control" id="txtFecha" name="txtFecha">
+                                            <input type="text" class="form-control" id="idVeedor" name="txtFecha">
 
                                         </div>
                                     </div>
@@ -107,9 +117,9 @@
                             <br>
 
                             <!-- Botón para guardar entrega -->
-                            <button id="btnGuardarEntrega" class="btn btn-primary">Guardar entrega</button>
+                            <button id="btnGuardarEntrega" class="btn btn-primary" onclick="">Guardar entrega</button>
                            
-                            <button type="submit" name="opcion"  class="btn btn-primary" disabled><a href="actaEntrega.html" style="color: aliceblue; text-decoration: none;">Acta de Entrega</a></button>
+                            <button type="submit" name="opcion"  class="btn btn-primary" disabled>Acta de Entrega</button>
                             <a class="btn btn-secondary" href="splash.html"> Cancelar </a>
 
 
@@ -143,7 +153,11 @@
         document.getElementById("btnGuardarEntrega").addEventListener("click", function () {
         // Tu lógica para activar el botón "Acta de Entrega"
         document.getElementById("btnActaEntrega").disabled = false;
-    });
+        });
+        function irAPagina() {
+        // Redirigir a la otra página HTML
+        window.location.href = '.html';
+      }
     };
 
     

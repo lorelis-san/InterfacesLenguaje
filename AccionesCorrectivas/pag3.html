@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Actividades</title>
+</head>
+<body>
+    <div class="contenedor">  
+        <form class="row g-3" >
+          <h1>Registro de Solicitud de Acción Correctiva (SAC)</h1>
+          <div class="col-6">
+            <label for="idHallazgo" class="form-label">ID Hallazgo:</label>
+            <input type="text" class="form-control" id="idHallazgo">
+          </div>
+          <div class="col-6">
+            <label for="idSAC" class="form-label">Fecha:</label>
+            <input type="date" class="form-control" id="idSAC">
+          </div>
+          <div class="col-md-6">
+            <label for="responsableOSI" class="form-label">Responsable OSI:</label>
+            <select id="responsableOSI" class="form-select">
+              <option selected>Seleccionar...</option>
+              <option>...</option>
+            </select>
+          </div>
+          
+          <div class="col-6">
+            <label for="idAnalista" class="form-label">ID Analista:</label>
+            <select id="idAnalista" class="form-select">
+              <option selected>Seleccionar...</option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+            </select>
+          </div>
+          <div class="col-6" style="margin-top: 18px;">
+            <button type="button" name="opcion" value="reg" class="btn btn-primary" onclick="habilitarBoton()">&nbsp;&nbsp;&nbsp;Registrar&nbsp;&nbsp;&nbsp;</button>
+          </div>
+        </form>
+        <button type="button" id="boton" class="btn btn-primary" onclick="irAPagina()" disabled>&nbsp;&nbsp;&nbsp;Enviar a Analista Designado&nbsp;&nbsp;&nbsp;</button>
+      </div>  
+    
+</body>
+</html>
